@@ -1,0 +1,5 @@
+
+.icon-mail:before { content: '\e800'; } /* '' */
+.icon-phone-1:before { content: '\e801'; } /* '' */
+.icon-location:before { content: '\e802'; } /* '' */
+.icon-clock:before { content: '\e803'; } /* '' */
