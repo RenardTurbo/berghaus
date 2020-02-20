@@ -12,8 +12,8 @@ export function Request(props) {
         console.log(name, number, email)
     }
 
-    function handleClickViewImage(e) {
-        
+    function handleClickViewImage() {
+        setIsImageView(!isImageView)
     }
 
     return (
@@ -28,8 +28,11 @@ export function Request(props) {
                 <img className="request-form__body_house_image" onClick={handleClickViewImage} src={house} alt="house" />
                 <figcaption>68 м2, Москва</figcaption> 
                 <figcaption>Двухкомнатная квартира</figcaption> 
-                {isImageView &&(<div className="request-form__body_house_imageView"></div>)}
             </div>
+            {isImageView &&(<div className="request-form__body_house_imageView" >
+                    <button onClick={handleClickViewImage} ></button>
+                    <img src={house} alt="house"/>
+            </div>)}
             <div className="request-form__body_card">
                 <div className="request-form__body_card_title">
                     <p>Оставьте заявку и получите подробную смету вашего ремонта в 3 вариантах уже через 2 часа</p>

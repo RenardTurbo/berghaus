@@ -1,8 +1,7 @@
 .request-form
-    height: 850px
     filter: drop-shadow(0px 1px 1.5px rgba(0,0,0,0.22))
     background-color: #ffffff
-    margin: 20px 50px 20px 50px
+    margin: 20px 350px 20px 350px
     display: flex 
     flex-direction: column
     &__title
@@ -19,15 +18,39 @@
     &__body
         display: flex
         justify-content: space-around
+        margin: 0 0 40px 0
         &_house
             filter: drop-shadow(-7.718px 15.147px 24.5px rgba(0,0,1,0.14))
             background-color: #ffffff
             & figcaption
                 margin: -45px 0 0 40px
                 display: flex
-                &_imageView
+            &_imageView
+                position: absolute
+                z-index: 5
+                width: 1200px
+                height: 800px
+                top: 0px
+                & img 
+                    height: 100%
+                    width: 100%
+                & button 
                     position: absolute
-                    z-index: 200
+                    color: black
+                    right: 32px
+                    width: 32px
+                    height: 32px
+                    opacity: 0.4
+                & button:before, button::after
+                    position: absolute
+                    content: ' '
+                    height: 10px
+                    width: 2px
+                    background-color: red
+                & button:before 
+                    transform: rotate(45deg)
+                & button:after 
+                    transform: rotate(-45deg)
         &_card
             width: 360px
             height: 528px

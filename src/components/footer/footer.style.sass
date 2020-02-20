@@ -1,16 +1,18 @@
 .footer
-    background-image: url(../../assets/images/map.png)
-    background-size: cover
     display: flex
     flex-direction: column
+    &__location
+        filter: grayscale(100%)
     &__office-card
+        position: absolute
+        left: 1200px
         width: 384px
         height: 580px
         filter: drop-shadow(-4.086px 8.019px 31px rgba(55,55,55,0.17))
         background-color: #ffffff
         display: flex
         flex-direction: column
-        margin: 50px 100px 50px 1200px
+        margin: 100px 0
         &_title
             font-size: 25px
             line-height: 36px
