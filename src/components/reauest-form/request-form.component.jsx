@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './request-form.style.sass';
 import house from "../../assets/images/house.png"
+import house2 from "../../assets/images/house2.png"
 
 export function Request(props) {
         const [name, setName] = useState("");
@@ -31,7 +32,7 @@ export function Request(props) {
             </div>
             {isImageView &&(<div className="request-form__body_house_imageView" >
                     <button onClick={handleClickViewImage} ></button>
-                    <img src={house} alt="house"/>
+                    <img src={house2} alt="house"/>
             </div>)}
             <div className="request-form__body_card">
                 <div className="request-form__body_card_title">
