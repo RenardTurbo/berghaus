@@ -1,9 +1,11 @@
 import React from 'react';
+
 import './header.style.sass';
 import logo from "../../assets/images/logo.png";
 
 
-export function Header(props) {
+export function Header() {
+  
     return (
       <div className="header">
         <div className="header__about">

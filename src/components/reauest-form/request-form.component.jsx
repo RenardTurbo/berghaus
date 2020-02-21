@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
-import './request-form.style.sass';
-import house from "../../assets/images/house.png"
-import house2 from "../../assets/images/house2.png"
 
-export function Request(props) {
+import './request-form.style.sass';
+import house from "../../assets/images/house.png";
+import house2 from "../../assets/images/house2.png";
+
+export function Request() {
         const [name, setName] = useState("");
         const [number, setNumber] = useState("");
         const [email, setEmail] = useState("");
         const [isImageView, setIsImageView] = useState(false);
     
     function handleClickGetSmeta() {
-        console.log(name, number, email)
+        let regExpName = /[А-Яа-яЁё ]+/g
+        let regExpMail = /[\w\d\.\-]+@[\w\d\.\-]+/g
+
+        if (!regExpName.test(name)){
+            alert("Неподходяещее имя")
+        }else if (!regExpMail.test(email)){
+            alert("Неподходящий емеил")
+        }else {
+            console.log(name, number, email)
+        }
     }
 
     function handleClickViewImage() {
@@ -40,7 +50,7 @@ export function Request(props) {
                 </div>
                 <div className="request-form__body_card_name">
                     <p>Введите ваше имя</p>
-                    <input value={name} type="text" onChange={e => setName(e.target.value)} />
+                    <input value={name} name="name" type="text" onChange={e => setName(e.target.value)} />
                 </div>
                 <div className="request-form__body_card_number">
                     <p>Введите ваш телефон</p>
@@ -48,7 +58,7 @@ export function Request(props) {
                 </div>
                 <div className="request-form__body_card_mail">
                     <p>Введите вашу почту</p>
-                    <input value={email} type="email" onChange={e => setEmail(e.target.value)} />
+                    <input value={email}  name="email" type="email" onChange={e => setEmail(e.target.value)} />
                 </div>
                 <div className="request-form__body_card_button">
                     <button onClick={handleClickGetSmeta}>Получить смету</button>
